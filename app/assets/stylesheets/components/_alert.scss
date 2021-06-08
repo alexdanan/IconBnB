@@ -1,0 +1,39 @@
+.alert{
+  width: 320px;
+  height: 320px;
+  position: fixed;
+  top: 0px;
+  z-index: 99999;
+  /* background: #000; */
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  margin: auto;
+  right: 0px;
+  left: 0;
+  top: 0px;
+  bottom: 0px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: grid;
+align-content: end;
+}
+.alert button {
+    background: #ab2c2c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    line-height: 32px;
+}
+.alert-title {
+    display: grid;
+    justify-content: center;
+    min-height: 286px;
+    align-content: center;
+}
+.alert-title {
+    font-size: 21px;
+    font-weight: 200;
+    opacity: .88;
+}

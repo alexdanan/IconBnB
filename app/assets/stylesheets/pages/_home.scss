@@ -44,7 +44,33 @@ text-decoration:none;
 }
 
 /*** [+] NAV ***/
+.login-btn {
+    border: solid 1px #c31919;
+    border-radius: 3px;
+    padding: .3rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    /* font-size: 14px; */
+    font-size: 14px;
+    letter-spacing: .5px;
+    color: #fff;
+    background: #ab2c2c;
+    line-height: 16px;
+}
 
+.log-out{
+  border: solid 1px #c31919;
+    border-radius: 3px;
+    padding: .3rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    /* font-size: 14px; */
+    font-size: 14px;
+    letter-spacing: .5px;
+    color: #fff;
+    background: #ab2c2c;
+    line-height: 16px;
+}
 /*** [-] NAV ***/
 
 body {
@@ -52,6 +78,7 @@ body {
   position: relative;
   font-family: 'Roboto';
 }
+
 .main-nav {
     width: calc(100% - 40px);
     height: 60px;
