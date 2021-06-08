@@ -4,6 +4,7 @@ class IconsController < ApplicationController
   end
 
   def show
+    @icon = Icon.find(params[:id])
 
   end
 
