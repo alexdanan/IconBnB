@@ -2,8 +2,7 @@
 <nav class="main-nav">
 <!--[Inner]-->
 <div class="logo">
-
-  <img src="img/ionic_logo.png" alt="Ionic Logo" style="">
+<%= image_tag("ionic_logo.png") %>
 
 </div>
 
@@ -24,7 +23,7 @@
   <div class="avatar">
   <% if user_signed_in? %>
 
-            
+
             <%= button_to "Log out", destroy_user_session_path, class: "log-out", :method => :delete %>
       <% else %>
          <%= button_to "Login", new_user_session_path, class: "login-btn", :method => :get %>
