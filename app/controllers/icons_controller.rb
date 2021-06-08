@@ -1,5 +1,4 @@
 class IconsController < ApplicationController
-
   def index
   end
 
@@ -13,6 +12,7 @@ class IconsController < ApplicationController
 
   def create
     @icon = Icon.new(icon_params)
+    @icon.user = current_user
     if @icon.save
       redirect_to @icon, notice: "Icon was successfully created"
     else
@@ -21,12 +21,22 @@ class IconsController < ApplicationController
   end
 
   def edit
+    @icon = Icon.find(params[:id])
   end
 
   def update
+    @icon = Icon.find(params[:id])
+    if @icon.update(icon_params)
+      redirect_to @icon, notice: "Icon was successfully updated"
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @icon = Icon.find(params[:id])
+    @icon.destroy
+    redirect_to icons_index_path, notice: "Icon was successfully destroyed"
   end
 
   private
