@@ -1,17 +1,25 @@
 class BookingsController < ApplicationController
-  before_action :find_icon, only: [:new, :create, :edit]
+  before_action :find_icon, only: [:show, :new, :create, :edit]
   before_action :find, only: :destroy
 
   def index
-    @bookings = Bookings.all
+    @bookings = Booking.all
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    authorize @booking
     @booking.icon = @icon
     if @booking.save
       redirect_to booking_path(@icon)
@@ -21,6 +29,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    authorize @booking
     @booking.destroy
     redirect_to bookings_path
   end
@@ -28,7 +37,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:bookings).permit(:icon_id, :user_id, :start_time, :end_time, :total_price, :status)
+    params.require(:bookings).permit(:icon_id, :start_time, :end_time, :total_price, :status)
   end
 
 
