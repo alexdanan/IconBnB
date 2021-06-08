@@ -1,2 +1,15 @@
-<h1>Icons#new</h1>
-<p>Find me in app/views/icons/new.html.erb</p>
+<h1>Create a new Icon</h1>
+<p>
+
+  <%= simple_form_for(@icon) do |f|%>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :category %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.submit "Create Icon", class:"btn btn-primary" %>
+
+  <% end %>
+
+
+</p>
