@@ -1,2 +1,8 @@
-<h1>Icons#show</h1>
-<p>Find me in app/views/icons/show.html.erb</p>
+<div>
+  <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn4.pitchfork.com%2Flongform%2F1005%2FBobDylan.jpg&f=1&nofb=1" alt="Bob Dylan">
+  <h1><%= @icon.name %></h1>
+  <h2><%= @icon.category %></h2>
+  <p><%= @icon.description %></p>
+  <h3><%= @icon.price %> $ </h3>
+  <h2> <%= link_to "Back to all Icons!", icons_path %> </h2>
+</div>

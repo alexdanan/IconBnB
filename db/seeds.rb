@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+puts "Destroying all users"
 User.destroy_all
+puts "Destroying all icons"
 Icon.destroy_all
 
 
