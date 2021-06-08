@@ -1,11 +1,11 @@
 class IconsController < ApplicationController
   def index
-
+    @icons = policy_scope(Icon)
   end
 
   def show
     @icon = Icon.find(params[:id])
-
+    authorize @icon
   end
 
   def new
@@ -15,8 +15,8 @@ class IconsController < ApplicationController
 
   def create
     @icon = Icon.new(icon_params)
-    authorize @icon
     @icon.user = current_user
+    authorize @icon
     if @icon.save
       redirect_to @icon, notice: "Icon was successfully created"
     else

@@ -4,7 +4,7 @@
   <%= simple_form_for(@icon) do |f|%>
   <%= f.input :name %>
   <%= f.input :location %>
-  <%= f.input :category, collection: ["sports", "music", "arts", "cooking"] %>
+  <%= f.input :category, collection: Icon::CATEGORIES %>
   <%= f.input :description %>
   <%= f.input :price %>
   <%= f.submit "Create Icon", class:"btn btn-primary" %>
