@@ -1,0 +1,7 @@
+<% simple_form_for(@booking) do |f| %>
+  <% f.input :start_time %>
+  <% f.input :end_time %>
+  <% f.input :total_time %>
+  <% f.check_box :status %>
+  <% f.button :submit %>
+<% end %>
