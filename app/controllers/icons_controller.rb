@@ -30,7 +30,6 @@ class IconsController < ApplicationController
   end
 
   def update
-    authorize @restaurant
     @icon = Icon.find(params[:id])
     if @icon.update(icon_params)
       redirect_to @icon, notice: "Icon was successfully updated"
@@ -49,6 +48,6 @@ class IconsController < ApplicationController
   private
 
   def icon_params
-    params.require(:icon).permit(:name, :category, :location, :price, :description)
+    params.require(:icon).permit(:name, :category, :location, :price, :description, :photo)
   end
 end
