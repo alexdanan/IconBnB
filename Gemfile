@@ -35,6 +35,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem "simple_calendar", "~> 2.4"
 
 group :development, :test do
   gem 'pry-byebug'

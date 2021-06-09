@@ -16,10 +16,6 @@ class BookingPolicy < ApplicationPolicy
       true
     end
 
-    def new?
-      create?
-    end
-
     def destroy?
       user.admin || record.user == user
     end
