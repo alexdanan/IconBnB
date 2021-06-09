@@ -1,7 +1,11 @@
 <h1>Book with your Favourite Icon </h1>
 <%= link_to "Crate a new Icon",  new_icon_path%>
 <p><% @icons.each do |icon| %>
-   <img src="https://source.unsplash.com/featured/?{actor}" alt="Bob Dylan">
+  <% if icon.photo.attached? %>
+   <%= cl_image_tag(icon.photo.key) %>
+  <% else %>
+  <img src="https://phantom-marca.unidadeditorial.es/6325b621b1ec481729f0865211d0ed3f/resize/1320/f/jpg/assets/multimedia/imagenes/2020/11/25/16062940399517.jpg" alt="">
+  <% end %>
   <%= icon.name %>
   <%= icon.category %>
   <% end %>
