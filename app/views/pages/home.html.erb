@@ -12,12 +12,11 @@
 
     </li>
     <!-- SEARCH -->
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Authors</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
-    <li><a href="#">Review</a></li>
-    <li></li>
+    <li><%= link_to 'Home', root_path %></li>
+    <li><%= link_to "Dashboard", dashboard_path %></li>
+    <li><%= link_to "Explore Icons", icons_path  %></li>
+    <li><a href="#">Bookings</a></li>
+    <li><a href="#">Help</a></li>
 
   </ul>
   <div class="avatar">
@@ -41,7 +40,7 @@
     <p>The best way to become master in your field.</p>
     <form class="" action="index.html" method="post">
       <input type="text" name="" value="" placeholder="Email">
-      <button type="button" name="button">Sing Up</button>
+      <button type="button" name="button">Sign Up</button>
     </form>
     <span class="terms">By sharing your email, you agree to our Terms of Service and Privacy Policy.</span>
   </div>
