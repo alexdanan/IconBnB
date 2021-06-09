@@ -1,2 +1,9 @@
-<h1>Icons#index</h1>
-<p>Find me in app/views/icons/index.html.erb</p>
+<h1>Book with your Favourite Icon </h1>
+<p><% @icons.each do |icon| %>
+   <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn4.pitchfork.com%2Flongform%2F1005%2FBobDylan.jpg&f=1&nofb=1" alt="Bob Dylan">
+  <%= icon.name %>
+  <%= icon.category %>
+  <% end %>
+
+
+</p>
