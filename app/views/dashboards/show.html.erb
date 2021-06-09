@@ -1,10 +1,11 @@
-<%@bookings.each do |booking|%>
-<p>You have a session with <em><%=booking.icon.name%></em> 
-on <%=booking.start_day%>
-at <%=booking.start_time.strftime("at %I:%M%p")%>
-finishing at <%=booking.end_time.strftime("at %I:%M%p")%>
-for a total price of $<%=booking.total_price%>
-Booking status: <%=booking.status%>
+<div class="card">
+  <%@bookings.each do |booking|%>
+  <h3 class = "hello">You have a session with <em><%=booking.icon.name%></em></h3>
+  <p>on <%=booking.start_day%>
+  at <%=booking.start_time.strftime("at %I:%M%p")%>
+  finishing at <%=booking.end_time.strftime("at %I:%M%p")%>
+  for a total price of $<%=booking.total_price%>
+  Booking status: <%=booking.status%></p>
 
 </p><small class= "text-right flex-shrink-0"><%= link_to 'Delete', booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete this booking?"}, class: 'text-danger' %></small>
 <%end%>
@@ -35,9 +36,8 @@ Booking status: <%=booking.status%>
           <% week.each do |day| %>
             <td>
               <%=day%>
-              <%@bookings.select{ |b| b.start_day.to_date == day }.sort_by(&:start_time).each do |booking| %>
-                <div><%=link_to "Session with #{booking.icon.name} #{booking.start_time.strftime("at %I:%M%p")}", booking%></div>
-                
+              <%@bookings.select{ |b| b.start_day&.to_date == day }.sort_by(&:start_time).each do |booking| %>
+                <div class = "card"><h3 class = "hello"><%=link_to "Session with #{booking.icon.name} #{booking.start_time.strftime("at %I:%M%p")}", booking%></h3></div>
                 <%end%>
             </td>
           <%end%>
@@ -47,4 +47,5 @@ Booking status: <%=booking.status%>
   </table>
   </div>
 </div>
+
 
