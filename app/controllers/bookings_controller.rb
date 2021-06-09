@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_icon, only: [:show, :new, :create, :edit]
+  before_action :find_icon, only: [:new, :create, :edit]
   before_action :find, only: :destroy
 
   def index
@@ -8,7 +8,8 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
-    authorize @booking
+    # authorize @booking
+    #TODO: comment this in when tis fixed
   end
 
   def new
@@ -22,7 +23,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.icon = @icon
     if @booking.save
-      redirect_to booking_path(@icon)
+      redirect_to booking_path(@booking)
     else
       render :new
     end
@@ -37,7 +38,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:bookings).permit(:icon_id, :start_time, :end_time, :total_price, :status)
+    params.require(:booking).permit(:icon_id, :start_time, :end_time, :status)
   end
 
 

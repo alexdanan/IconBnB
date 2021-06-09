@@ -5,4 +5,5 @@
   <p><%= @icon.description %></p>
   <h3><%= @icon.price %> $ </h3>
   <h2> <%= link_to "Back to all Icons!", icons_path %> </h2>
+  <h2> <%= link_to "Book the icon", new_icon_booking_path(@icon) %> </h2>
 </div>

@@ -1,5 +1,50 @@
-efef
 <%@bookings.each do |booking|%>
-    <p><%=booking.icon.name%>
-    "<%=booking.icon.description%>"</p>
+<p>You have a session with <em><%=booking.icon.name%></em> 
+on <%=booking.start_day%>
+at <%=booking.start_time.strftime("at %I:%M%p")%>
+finishing at <%=booking.end_time.strftime("at %I:%M%p")%>
+for a total price of $<%=booking.total_price%>
+Booking status: <%=booking.status%>
+
+</p><small class= "text-right flex-shrink-0"><%= link_to 'Delete', booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete this booking?"}, class: 'text-danger' %></small>
 <%end%>
+
+<% start_date = params.fetch(:start_date, Date.today).to_date%>
+<% date_range = (start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)%>
+
+<div class="wrapper">
+  <table class="simple-calendar">
+    <thead>
+      <tr>
+      <div class="calendar__header">
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+
+      </tr>
+    </thead>
+
+
+    <tbody>
+      <% date_range.each_slice(7) do |week| %>
+        <tr>
+          <% week.each do |day| %>
+            <td>
+              <%=day%>
+              <%@bookings.select{ |b| b.start_day.to_date == day }.sort_by(&:start_time).each do |booking| %>
+                <div><%=link_to "Session with #{booking.icon.name} #{booking.start_time.strftime("at %I:%M%p")}", booking%></div>
+                
+                <%end%>
+            </td>
+          <%end%>
+        <tr>
+      <%end%>
+    </tbody>
+  </table>
+  </div>
+</div>
+
