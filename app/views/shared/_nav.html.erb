@@ -1,0 +1,34 @@
+<!--[START] NAVIGATION -->
+<nav class="main-nav">
+<!--[Inner]-->
+<div class="logo">
+<%= image_tag("ionic_logo.png") %>
+
+</div>
+
+  <ul class="nav">
+    <!-- SEARCH -->
+    <li class="search">
+
+    </li>
+    <!-- SEARCH -->
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Authors</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Review</a></li>
+    <li></li>
+
+  </ul>
+  <div class="avatar">
+  <% if user_signed_in? %>
+
+
+            <%= button_to "Log out", destroy_user_session_path, class: "log-out", :method => :delete %>
+      <% else %>
+         <%= button_to "Login", new_user_session_path, class: "login-btn", :method => :get %>
+      <% end %>
+</div>
+<!--[-]-->
+</nav>
+<!--[END] NAVIGATION -->
