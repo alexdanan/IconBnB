@@ -1,13 +1,19 @@
 <h1>Create a new Icon</h1>
 <p>
 
+<div class="form">
   <%= simple_form_for(@icon) do |f|%>
-  <%= f.input :name %>
-  <%= f.input :location %>
-  <%= f.input :category, collection: Icon::CATEGORIES %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.submit "Create Icon", class:"btn btn-primary" %>
+  <div class="form-inputs col-sm-6 align-self-center">
+    <%= f.input :name %>
+    <%= f.input :location %>
+    <%= f.input :category, collection: Icon::CATEGORIES %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+  </div>
+  <div class="form-actions cols-m-6 align-self-center">
+   <%= f.submit "Create Icon", class:"btn btn-primary" %>
+  </div>
+</div>
 
   <% end %>
 
