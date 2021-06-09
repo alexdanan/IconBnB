@@ -1,5 +1,5 @@
 class Icon < ApplicationRecord
-  CATEGORIES = ["music", "sports", "arts", "cooking"]
+  CATEGORIES = ["Music", "Sports", "Business", "Food", "Politics", "Science", "Design", "Writing"]
   has_many :bookings, dependent: :destroy
   belongs_to :user
   has_one_attached :photo
