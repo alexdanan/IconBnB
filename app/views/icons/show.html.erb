@@ -39,6 +39,12 @@
   </div>
   <!-- [-] SHOW HERO -->
 
+  <div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
   <!-- [+] IN SIMILAR CATEGORY -->
   <section class="similar-show">
     <div class="similar-show-title">

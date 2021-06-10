@@ -110,6 +110,30 @@ icons = [
     name: "Snoopy", category: "Music",
     description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
     price: 10, location: "Los Angeles"
+  },
+  {
+  image_url: "https://time.com/wp-content/uploads/2016/09/donald-trump-nigel-parry.jpeg?w=760",
+    name: "Donald Trump", category: "Politics",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Washington"
+  },
+  {
+  image_url: "https://fotos00.estadiodeportivo.com/2021/06/10/690x278/macron-contento.jpg",
+    name: "Emmanuel Macron", category: "Politics",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Paris"
+  },
+  {
+  image_url: "https://fotos00.estadiodeportivo.com/2021/06/10/690x278/macron-contento.jpg",
+    name: "Justin Bieber", category: "Music",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Los Angeles"
+  },
+  {
+  image_url: "https://media.vanityfair.com/photos/5cdacd630c67926f7fea3f72/1:1/w_1669,h_1669,c_limit/MCDTROY_EC007.jpg",
+    name: "Achilles", category: "Sports",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Turkey"
   }
 ]
 

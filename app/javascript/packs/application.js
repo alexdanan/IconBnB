@@ -45,6 +45,7 @@ document.addEventListener('turbolinks:load', () => {
   initFlickity();
 
   initMapbox();
+  // initMapbox2();
   initAutocomplete();
   initToggle();
   initToggle2();
