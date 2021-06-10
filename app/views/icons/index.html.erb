@@ -26,16 +26,12 @@
 <div class="list-iner">
   <div class="left-side-bar">
     <ul class="category-icons">
-      <li>All classes</li>
-      <li>Arts & Entertainment</li>
-      <li>Food</li>
-      <li>Music</li>
-      <li>Business</li>
-      <li>Sports & Gaming</li>
-      <li>Writing</li>
-      <li>Science & Tech</li>
-      <li>Home & Lifestyle</li>
-      <li>Community & Government</li>
+
+      <li><%= link_to "All icons", icons_path %></li>
+      <% @categories.each do |cat| %>
+
+      <li class="category"><%= link_to "#{cat}", "/icons?query=#{cat}"  %></li>
+        <% end %>
     </ul>
   </div>
   <div class="right-side-bar">

@@ -20,28 +20,13 @@
   <div class="home-slider">
     <div class="inner">
       <ul> <!-- THE SLIDER -->
-        <!-- [+] ITEM -->
 
-
-<!--          <% @icons.each do |icon| %>
-      <% if icon.photo.attached? %>
-       <li style="background:url(<%=cl_image_path(icon.photo.key) %>)">
-          <% else %>
-  <img src="https://phantom-marca.unidadeditorial.es/6325b621b1ec481729f0865211d0ed3f/resize/1320/f/jpg/assets/multimedia/imagenes/2020/11/25/16062940399517.jpg" alt="">
-  <% end %>
-      <li style="background:url('https://www.masterclass.com/course-images/attachments/PM3N5CPL1AhDizCfJSFhsZUi?width=300&height=533&fit=cover&dpr=2');">
-       <div class="hs-inner">
-          <div class="title">
-            <p class = "shadow"><strong><%= icon.name %></strong></p>
-            <p class = "shadow"><%= icon.description %></p>
-          </div>
-          <button class="button" type="button" name="button"><%= link_to "Book", icon_path(icon) %></button>
-        </div>
-      </li>
-      <% end %> -->
-
-
+      <% if @barack.photo.attached? %>
         <li class="hs-item" style="background:url(<%=cl_image_path(@barack.photo.key) %>)">
+           <% else %>
+           <li class="hs-item" style="background:url("https://phantom-marca.unidadeditorial.es/6325b621b1ec481729f0865211d0ed3f/resize/1320/f/jpg/assets/multimedia/imagenes/2020/11/25/16062940399517.jpg" alt="")>
+         <% end %>
+
           <div class="hs-inner">
             <div class="title">
               <p class= "shadow"><strong><%= @barack.name %></strong></p>
@@ -51,8 +36,12 @@
           </div>
         </li>
 
-
+<% if @socrates.photo.attached? %>
         <li class="hs-item" style="background:url(<%=cl_image_path(@socrates.photo.key) %>)">
+<% else %>
+           <li class="hs-item" style="background:url("https://phantom-marca.unidadeditorial.es/6325b621b1ec481729f0865211d0ed3f/resize/1320/f/jpg/assets/multimedia/imagenes/2020/11/25/16062940399517.jpg" alt="")>
+         <% end %>
+
           <div class="hs-inner">
             <div class="title">
               <p class= "shadow"><strong><%= @socrates.name %></strong></p>
@@ -62,8 +51,11 @@
           </div>
         </li>
 
-
+<% if @rihanna.photo.attached? %>
         <li class="hs-item" style="background:url(<%=cl_image_path(@rihanna.photo.key) %>)">
+          <% else %>
+           <li class="hs-item" style="background:url("https://phantom-marca.unidadeditorial.es/6325b621b1ec481729f0865211d0ed3f/resize/1320/f/jpg/assets/multimedia/imagenes/2020/11/25/16062940399517.jpg" alt="")>
+         <% end %>
           <div class="hs-inner">
             <div class="title">
               <p class= "shadow"><strong><%= @rihanna.name %></strong></p>
