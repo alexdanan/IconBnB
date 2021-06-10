@@ -36,6 +36,7 @@ import { initFlickity } from '../plugins/init_flickity';
 import { initToggle } from '../components/init_toggle';
 import { initToggle2 } from '../components/init_toggle';
 import { initColorToggle } from '../components/init_toggle';
+import { initStarRating } from '../plugins/init_star_rating';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -48,15 +49,6 @@ document.addEventListener('turbolinks:load', () => {
   initToggle();
   initToggle2();
   initColorToggle();
+  initStarRating();
 });
-
-
-import { initStarRating } from '../plugins/init_star_rating';
-
-initStarRating();
-
-import { initMapbox } from '../plugins/init_mapbox';
-document.addEventListener('turbolinks:load', ()=> {
-  initMapbox();
-})
 
