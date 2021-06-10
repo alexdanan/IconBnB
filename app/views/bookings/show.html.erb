@@ -1,1 +1,14 @@
-<div class ="booking-card">aefEAfeafaefeafeafeaf</div>
+<div class="new-icon-form">
+  <div class="border">
+    <h1>Booking Confirmed!</h1>
+    <p>
+        You have a session with <em><%=@booking.icon.name%>
+        on <%=@booking.start_day%>
+        starting <%=@booking.start_time.strftime("at %I:%M%p")%>
+        finishing <%=@booking.end_time.strftime("at %I:%M%p")%>
+        for a total price of $<%=@booking.total_price%>
+        Booking status: <%=@booking.status%></p>
+        </em>
+        <%=link_to 'Go To Dashboard', dashboard_path, class: "btn btn-primary btn-block"%>
+  </div>
+</div>
