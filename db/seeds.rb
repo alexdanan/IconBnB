@@ -76,7 +76,7 @@ icons = [
     price: 10, location: "Wisconsin"
   },
     {
-    image_url: "https://estaticos-cdn.sport.es/clip/b5cf8c10-c67e-4e37-b6e1-5a90b15efa41_media-libre-aspect-ratio_default_0.jpg",
+    image_url: "https://kawa-news.com/wp-content/uploads/2021/04/elonmusk.jpg",
     name: "Elon Musk", category: "Business",
     description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
     price: 10, location: "San Francisco"
@@ -94,12 +94,23 @@ icons = [
     price: 10, location: "New York"
   },
   {
-  image_url: "https://imagenes.20minutos.es/files/image_656_370/files/fp/uploads/imagenes/2020/10/27/emily-ratajkowski.r_d.2257-1437.jpeg",
-    name: "Emily Ratajkowski", category: "Cinema",
+  image_url: "https://mir-s3-cdn-cf.behance.net/project_modules/disp/eba85d54261541.5609376472af6.jpg",
+    name: "James Bond", category: "Cinema",
     description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
-    price: 10, location: "New York"
+    price: 10, location: "London"
   },
-
+  {
+  image_url: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg",
+    name: "Albert Einstein", category: "Science",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Germany"
+  },
+    {
+  image_url: "https://i.pinimg.com/originals/e1/f6/40/e1f640c675ec89d64c971a00eca7d58f.jpg",
+    name: "Snoopy", category: "Music",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Los Angeles"
+  }
 ]
 
 vlad = User.create(email: "adrewkin@outlook.com", password: "password")

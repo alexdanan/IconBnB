@@ -4,18 +4,19 @@ class IconsController < ApplicationController
     if params[:query].present?
       sql_query = " \
         icons.location @@ :query \
+        OR icons.category @@ :query \
       "
       @icons = Icon.where(sql_query, query: "%#{params[:query]}%")
     else
       @icons = Icon.all
     end
+    @categories = Icon.distinct.pluck(:category)
 
     @markers = @icons.geocoded.map do |icon|
       {
         lat: icon.latitude,
         lng: icon.longitude,
         info_window: render_to_string(partial: "info_window", locals: { icon: icon })
-
       }
     end
   end

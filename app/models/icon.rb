@@ -11,19 +11,17 @@ class Icon < ApplicationRecord
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
 
-
   include PgSearch::Model
-  pg_search_scope :search_by_location,
-                  against: [:location],
+  pg_search_scope :search_by_location_and_category,
+                  against: [:location, :category],
                   using: {
                     tsearch: { prefix: true }
                   }
 
-  
-   def average_rating
+  def average_rating
     ratings = self.reviews.map do |review|
       review.rating
     end
-    ratings.inject{ |sum, el| sum + el }.to_f / ratings.size
+    ratings.inject { |sum, el| sum + el }.to_f / ratings.size
   end
 end
