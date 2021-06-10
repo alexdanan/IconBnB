@@ -74,7 +74,31 @@ icons = [
     name: "Walter White", category: "Business",
     description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
     price: 10, location: "Wisconsin"
-  }
+  },
+    {
+    image_url: "https://estaticos-cdn.sport.es/clip/b5cf8c10-c67e-4e37-b6e1-5a90b15efa41_media-libre-aspect-ratio_default_0.jpg",
+    name: "Elon Musk", category: "Business",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "San Francisco"
+  },
+  {
+    image_url: "https://media-exp1.licdn.com/dms/image/C5603AQFun1MtI88Vyw/profile-displayphoto-shrink_800_800/0/1603138920608?e=1628726400&v=beta&t=_8wYjTxKmD5FOUTFXRYVGAY_xM_tpLvyitEPxLQI6FE",
+    name: "Nicolas Proto", category: "Code",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Barcelona"
+  },
+   {
+    image_url: "https://www.sustainability-times.com/wp-content/uploads/2019/03/Morgan_Freeman-Acoso_sexual-Harvey_Weinstein-Hollywood-Cine_309732160_79173876_1024x576.jpg",
+    name: "Morgan Freeman", category: "Cinema",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "New York"
+  },
+  {
+  image_url: "https://imagenes.20minutos.es/files/image_656_370/files/fp/uploads/imagenes/2020/10/27/emily-ratajkowski.r_d.2257-1437.jpeg",
+    name: "Emily Ratajkowski", category: "Cinema",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "New York"
+  },
 
 ]
 

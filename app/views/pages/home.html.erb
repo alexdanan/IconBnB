@@ -5,11 +5,16 @@
     <span class="cta-title">Create free account</span>
     <h1>BECOME THE SMARTEST PERSON IN THE ROOM</h1>
     <p>The best way to become master in your field.</p>
-    <form class="" action="/icons" method="get">
-      <input type="text" name="location" placeholder="Search by Location" id="icon_location">
-      <button type="submit" name="button">Search</button>
-    </form>
-    <span class="terms">By sharing your email, you agree to our Terms of Service and Privacy Policy.</span>
+
+    <%=form_tag icons_path, method: :get do  %>
+    <%= text_field_tag :query,
+    params[:query],
+    placeholder: "Search by Location"
+  %>
+  <button><%= submit_tag "Search"%></button>
+  <% end %>
+
+
   </div>
   <!-- [-] Call 2 Action -->
   <div class="home-slider">
