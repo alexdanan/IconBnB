@@ -50,8 +50,35 @@
 
         </li>
       </ul>
+      <div class="similar-show-title">
+        <h2>User reviews</h2>
+        <h2> <i class="fas fa-star"></i>  <%= @icon.average_rating %> </h2>
+      </div>
+  <!-- [-] END IN SIMILAR CATEGORY -->
+
+  <!-- [+] IN REVIEW CATEGORY -->
+      <div class="public-review">
+        <% @icon.reviews.each do |review| %>
+          <ul>
+            <li>
+              <% review.rating.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>  
+            </li>
+            <div class="public-review-interior">
+              <li>
+                <%= review.content %>
+              </li>
+            </div>
+          </ul>
+          <div class="link">
+            <%= link_to 'Delete', review_path(review), method: :delete  %>
+          </div>
+          <hr>
+        <% end -%>
+      </div>
     </div>
   </section>
-  <!-- [-] END IN SIMILAR CATEGORY -->
 </section>
+<!-- [-] END IN REVIEW CATEGORY -->
 <!-- [-] SINGLE SHOW -->
