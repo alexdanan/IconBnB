@@ -34,3 +34,8 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initFlickity();
 });
+
+import { initMapbox } from '../plugins/init_mapbox';
+document.addEventListener('turbolinks:load', ()=> {
+  initMapbox();
+})
