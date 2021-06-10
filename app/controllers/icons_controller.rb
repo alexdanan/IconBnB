@@ -1,7 +1,7 @@
 class IconsController < ApplicationController
   def index
     @icons = policy_scope(Icon)
-     if params[:query].present?
+    if params[:query].present?
       sql_query = " \
         icons.location @@ :query \
       "
