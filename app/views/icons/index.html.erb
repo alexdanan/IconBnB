@@ -44,7 +44,7 @@
 
       <% @icons.each do |icon| %>
       <% if icon.photo.attached? %>
-       <li style="background:url(<%=cl_image_path(icon.photo.key) %>)">
+       <li style="background:url(<%= cl_image_path(icon.photo.key) %>)">
           <% else %>
   <img src="https://phantom-marca.unidadeditorial.es/6325b621b1ec481729f0865211d0ed3f/resize/1320/f/jpg/assets/multimedia/imagenes/2020/11/25/16062940399517.jpg" alt="">
   <% end %>
