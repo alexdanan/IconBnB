@@ -5,12 +5,53 @@
     width: 100%;
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+.session-list{
+  border: 1px solid #5d5dca;
+  background: #262626;
+  margin-bottom: 100px;
 }
 
+.hello {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+  background: #2d2d6b;
+}
 
-        .hello{
-            color: brown;
-            padding-bottom: 5px;
-        }
+.headerh1{
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+  padding: 0.75rem;
+}
+
+.card-status{
+  font-size: 20px;
+  line-height: 1;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  background-color: #9b9ba0;
+  color: #fff;
+}
+
+.photoEdit{
+  border-radius: 50%;
+  height: 192px;
+  width: 192px;
+  object-fit: cover;
+}
+
