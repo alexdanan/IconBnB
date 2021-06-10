@@ -122,4 +122,6 @@ icons.each do |icon|
         status: (0..1).to_a.sample
         )
 end
-puts "This many user#{User.count}'s created"
+puts "Created #{User.count} users"
+puts "Created #{Icon.count} icons"
+puts "Created #{Booking.count} bookings"
