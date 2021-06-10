@@ -405,8 +405,81 @@ transition: all 0.5s ease 0s;
 }
 .category-header {
     display: flex;
+    justify-content: space-between;
+}
+.category-header .right {
+    display: grid;
+    align-content: center;
 }
 .category-slider {
     padding: 0px;
     margin: 0px;
+}
+
+.home-review p {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+.category-header {
+    margin-bottom: 30px;
+}
+.map-home {
+    margin-top: 60px;
+    padding-top: 60px;
+}
+.map-home .inner {
+    border: solid 1px #30343a;
+    min-height: 80vh;
+    min-width: 100%;
+    border-radius: 20px;
+}
+.map-home .inner {
+    background: url("https://media.istockphoto.com/vectors/black-and-white-vector-city-map-of-amsterdam-with-well-organized-vector-id912560662");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ul.category-slider li .inner .details {
+    position: absolute;
+    line-height: 23px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 12px;
+    border-radius: 3px;
+    background: #ab2c2c;
+    margin-top: 12px;
+    margin-left: 12px;
+}
+ul.category-slider li {
+    background-size: cover!important;
+    background-repeat: no-repeat!important;
+}
+ul.category-slider li .inner {
+    height: 100%;
+    display: grid;
+    align-items: flex-end;
+    /* height: 120px; */
+}
+ul.category-slider li .inner h3 {
+    margin-bottom: 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: .5px;
+}
+ul.category-slider {
+    display: flex;
+}
+ul.category-slider li {
+    width: calc((100% - 30px) / 4);
+    margin-right: 10px;
+}
+ul.category-slider li {
+    width: calc((100% - 30px) / 4);
+    border: 1px solid #31333b;
+    justify-content: space-between !important;
+    margin-right: 10px;
+    border-radius: 6px;
+    min-height: 180px;
+    height: 120px;
 }

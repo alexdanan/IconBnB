@@ -4,7 +4,7 @@
   <div class="show-hero-contaienr">
     <!-- [+] HERO IMAGE -->
     <div class="show-hero">
-      <div class="show-hero-img" style="background:url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn4.pitchfork.com%2Flongform%2F1005%2FBobDylan.jpg&f=1&nofb=1');">
+      <div class="show-hero-img" style="background:url('<%= cl_image_path @icon.photo.key, width: 983, height: 420, crop: :thumb, gravity: :face%>')">
         <span class="show-cat">Show in <%= @icon.category %> by:</span>
         <h1><%= @icon.name %></h1>
       </div>

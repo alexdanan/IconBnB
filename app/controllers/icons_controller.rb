@@ -1,6 +1,14 @@
 class IconsController < ApplicationController
   def index
     @icons = policy_scope(Icon)
+    @markers = @icons.geocoded.map do |icon|
+      {
+        lat: icon.latitude,
+        lng: icon.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { icon: icon })
+
+      }
+    end
   end
 
   def show
@@ -39,7 +47,7 @@ class IconsController < ApplicationController
   end
 
   def destroy
-    authorize @restaurant
+    authorize @icon
     @icon = Icon.find(params[:id])
     @icon.destroy
     redirect_to icons_index_path, notice: "Icon was successfully destroyed"

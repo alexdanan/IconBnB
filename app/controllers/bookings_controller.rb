@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @bookings = Booking.all
     # authorize @booking
     #TODO: comment this in when tis fixed
   end
@@ -30,15 +31,15 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    authorize @booking
+    # authorize @booking
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to dashboard_path
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:icon_id, :start_time, :end_time, :status)
+    params.require(:booking).permit(:icon_id, :start_time, :end_time, :status, :start_day)
   end
 
 

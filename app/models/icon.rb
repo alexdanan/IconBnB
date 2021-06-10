@@ -7,7 +7,11 @@ class Icon < ApplicationRecord
   validates :name, :price, :location, :category, :description, presence: true
   validates :description, length: { minimum: 10 }
   validates :category, inclusion: { in: CATEGORIES }
-  def average_rating
+
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+  
+   def average_rating
     ratings = self.reviews.map do |review|
       review.rating
     end

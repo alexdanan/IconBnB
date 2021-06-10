@@ -35,6 +35,12 @@ document.addEventListener('turbolinks:load', () => {
   initFlickity();
 });
 
+
 import { initStarRating } from '../plugins/init_star_rating';
 
 initStarRating();
+
+import { initMapbox } from '../plugins/init_mapbox';
+document.addEventListener('turbolinks:load', ()=> {
+  initMapbox();
+})
