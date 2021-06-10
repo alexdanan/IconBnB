@@ -57,6 +57,24 @@ icons = [
     description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
     price: 10, location: "Barbados"
   },
+   {
+    image_url: "https://phantom-marca.unidadeditorial.es/6325b621b1ec481729f0865211d0ed3f/resize/1320/f/jpg/assets/multimedia/imagenes/2020/11/25/16062940399517.jpg",
+    name: "Michael Jordan", category: "Sports",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Chicago"
+  },
+  {
+    image_url: "https://www.cocinayvino.com/wp-content/uploads/2021/04/www.cocinayvino.com-por-que-denunciaron-a-salt-bae-vegaseatercom-1.jpg",
+    name: "Salt Bae", category: "Food",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Mexico"
+  },
+  {
+    image_url: "https://i1.wp.com/hipertextual.com/wp-content/uploads/2018/01/breaking_bad_vince_gilligan_amc.jpg?fit=1000%2C667&ssl=1",
+    name: "Walter White", category: "Business",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Wisconsin"
+  }
 
 ]
 
