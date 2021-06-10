@@ -11,18 +11,9 @@ const buildMap = (mapElement) => {
   });
 };
 
-
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-    // popup.addClassName('popup-iconic');
-    // popup.style.backgroundImage = `url('${marker.image_url}')`;
-  // const element = document.createElement('div');
-  //       element.className = 'marker';
-  //       element.style.color = '#ab2c2c';
-  //       element.style.backgroundSize = 'contain';
-  //       element.style.width = '25px';
-  //       element.style.height = '25px';
     new mapboxgl.Marker({color: '#ab2c2c'})
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup)
@@ -49,5 +40,17 @@ const initMapbox = () => {
   }
 };
 
+// const initMapbox2 = () => {
+//   const mapElement = document.getElementById('map2');
+//   if (mapElement) {
+//     const map = buildMap(mapElement);
+//     const markers = JSON.parse(mapElement.dataset.markers);
+//     addMarkersToMap(map, markers);
+//     fitMapToMarkers(map, markers);
+
+//   }
+// };
+
 export { initMapbox };
+// export { initMapbox2 };
 
