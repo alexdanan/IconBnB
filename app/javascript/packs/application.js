@@ -27,12 +27,18 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import {initFlickity} from '../plugins/init_flickity';
+import { initFlickity } from '../plugins/init_flickity';
+import { initToggle } from '../components/init_toggle';
+import { initToggle2 } from '../components/init_toggle';
+import { initColorToggle } from '../components/init_toggle';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initFlickity();
+  initToggle();
+  initToggle2();
+  initColorToggle();
 });
 
 

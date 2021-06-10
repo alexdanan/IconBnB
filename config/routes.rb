@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   # get 'icons/index'
   # get 'icons/show'
   # get 'icons/new'
-  # get 'icons/create'
   resource :dashboard, only: [:show]
   devise_for :users
   root to: 'pages#home'
