@@ -483,3 +483,19 @@ ul.category-slider li {
     min-height: 180px;
     height: 120px;
 }
+
+span.algolia-places, span#algolia-places-listbox-0, span.ap-suggestions, span.ap-address, span.ap-name, span.ap-suggestion-icon, span.ap-name {
+  padding: 0;
+}
+.ap-input-icon.ap-icon-pin, .ap-input-icon.ap-icon-clear {
+  width: auto;
+  background: none;
+  margin-top: 0;
+}
+.ap-dataset-places * {
+  color: black;
+  padding: 0;
+}
+
+
+

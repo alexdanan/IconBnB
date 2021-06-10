@@ -1,6 +1,15 @@
 class IconsController < ApplicationController
   def index
     @icons = policy_scope(Icon)
+     if params[:query].present?
+      sql_query = " \
+        icons.location @@ :query \
+      "
+      @icons = Icon.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @icons = Icon.all
+    end
+
     @markers = @icons.geocoded.map do |icon|
       {
         lat: icon.latitude,
