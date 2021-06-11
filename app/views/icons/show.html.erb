@@ -32,28 +32,32 @@
   <h2> <%= link_to "Book the icon", new_icon_booking_path(@icon) %> </h2>
 </li>
 
+  <div class="under-book">
+  <li>
+    <div class= "container py-5">
+      <div class="row">
+        <div class ="col-12 col-md-6 offset-lg-2">
+          <div class = "bg-white rounded p-3 shadow">
+            Create booking
+           <%= simple_form_for [@icon, @booking] do |t|%>
+          <%= t.input :start_day, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= t.input :start_time, as: :string, required: false, input_html: {class: "timepicker"} %>
+          <%= t.input :end_time, as: :string, required: false, input_html: {class: "timepicker"} %>
+          <%= t.submit class: "btn btn-flat"%>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  </div>
+</div>
 
       </ul>
     </div>
     <!-- [-] HERO DETAILS -->
   </div>
   <!-- [-] SHOW HERO -->
-  <div class= "container py-5">
-  <div class="row">
-    <div class ="col-12 col-md-6 offset-lg-2">
-      <div class = "bg-white rounded p-3 shadow">
-        Create booking
-        <%= simple_form_for [@icon, @booking] do |t|%>
-          <%= t.input :start_day, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= t.input :start_time, as: :string, required: false, input_html: {class: "timepicker"} %>
-          <%= t.input :end_time, as: :string, required: false, input_html: {class: "timepicker"} %>
-          <%= t.submit class: "btn btn-flat"%>
-        <%end%>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
   <div id="map"
      style="width: 100%; height: 600px;"

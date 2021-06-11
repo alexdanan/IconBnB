@@ -185,8 +185,8 @@ icons.each do |icon|
     new_icon.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
     new_icon.save!
     Booking.create!(
-        icon: new_icon,
-        user: new_user,
+        icon_id: new_icon.id,
+        user_id: new_user.id,
         start_time: start_times.sample,
         end_time: end_times.sample,
         status: (0..1).to_a.sample
