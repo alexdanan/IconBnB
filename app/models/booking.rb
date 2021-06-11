@@ -1,6 +1,5 @@
 class Booking < ApplicationRecord
   before_create :set_total_price
-
   belongs_to :icon
   has_one :review, dependent: :destroy
   belongs_to :user

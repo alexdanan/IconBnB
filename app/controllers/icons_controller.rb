@@ -72,10 +72,10 @@ class IconsController < ApplicationController
   end
 
   def destroy
-    authorize @icon
     @icon = Icon.find(params[:id])
     @icon.destroy
-    redirect_to icons_index_path, notice: "Icon was successfully destroyed"
+    redirect_to icons_path, notice: "Icon was successfully destroyed"
+    authorize @icon
   end
 
   private
