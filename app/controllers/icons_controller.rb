@@ -10,6 +10,11 @@ class IconsController < ApplicationController
     else
       @icons = Icon.all
     end
+
+    if params[:location].present?
+      @icons = @icons.near(params[:location], 20)
+    end
+
     @categories = Icon.distinct.pluck(:category)
 
     @markers = @icons.geocoded.map do |icon|
@@ -25,11 +30,11 @@ class IconsController < ApplicationController
     @icon = Icon.find(params[:id])
 
     @markers =
-      {
+      [{
         lat: @icon.latitude,
         lng: @icon.longitude,
         info_window: render_to_string(partial: "info_window", locals: { icon: @icon })
-      }
+      }]
 
     authorize @icon
   end

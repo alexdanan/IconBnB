@@ -7,11 +7,11 @@
     <p>The best way to become master in your field.</p>
 
     <%=form_tag icons_path, method: :get do  %>
-    <%= text_field_tag :query,
-    params[:query],
-    placeholder: "Search by Location"
+    <%= text_field_tag :location,
+    params[:location],
+    placeholder: "Search by Location", id: "icon_location"
   %>
-  <button><%= submit_tag "Search"%></button>
+  <button type="submit">Search</button>
   <% end %>
 
 
