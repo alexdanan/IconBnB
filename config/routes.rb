@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   # get 'icons/index'
   # get 'icons/show'
-  # get 'icons/new'
   resource :dashboard, only: [:show]
   devise_for :users
   root to: 'pages#home'
@@ -10,7 +9,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
 
   end
-  resources :bookings, only: [:show, :edit, :update, :destroy] do
+  resources :bookings, only: [:show, :edit, :update, :destroy, :confirm] do
     resources :reviews, only: [:new, :create]
   end
 # TODO: add routes for day_avabs
