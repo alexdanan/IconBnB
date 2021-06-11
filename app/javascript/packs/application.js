@@ -33,8 +33,8 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
 import { initFlickity } from '../plugins/init_flickity';
-import { initToggle } from '../components/init_toggle';
-import { initToggle2 } from '../components/init_toggle';
+import { initIconToggle, initUserCalendarToggle, initIconBookingToggle, initColorToggle2, initIconCalendarToggle } from '../components/init_toggle';
+import { initUserListToggle } from '../components/init_toggle';
 import { initColorToggle } from '../components/init_toggle';
 import { initStarRating } from '../plugins/init_star_rating';
 
@@ -43,16 +43,25 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initFlickity();
-
   initMapbox();
-  // initMapbox2();
+  initStarRating();
   initAutocomplete();
+
+  if (document.querySelector(".wrapthat")) {
+    initUserCalendarToggle();
+    initUserListToggle();
+    initColorToggle();
+    initIconToggle();
+    initIconBookingToggle();
+    initColorToggle2();
+    initIconCalendarToggle();
+  }
+  // initMapbox2();
+
   if (document.querySelector(".calendar-wrap")) {
     initToggle();
     initToggle2();
     initColorToggle();
   }
-
-  initStarRating();
 });
 
