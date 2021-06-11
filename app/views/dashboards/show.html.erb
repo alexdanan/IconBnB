@@ -55,7 +55,7 @@
             finishing <%= booking.end_time.strftime("at %I:%M%p")%>
             for a total price of $<%= booking.total_price%>
           </div>
-          <div class = "card-status">Booking status: <%= booking.status.capitalize%></div>
+          <div class = "card-status  <%= booking.status %>">Booking status: <%= booking.status.capitalize%></div>
         </div>
         <img class ="photoEdit" src = "<%= cl_image_path(booking.icon.photo.key) %>">
         <%=booking.icon.description%>
@@ -92,25 +92,17 @@
           <tr>
             <% week.each do |day| %>
               <td>
-                <%=day%>
+                <%= day %>
                 <%@bookings.select{ |b| b.start_day&.to_date == day }.sort_by(&:start_time).each do |booking| %>
                   <img class ="photoMini" src = "<%= cl_image_path(booking.icon.photo.key) %>">
-                  <div class = "card"><h3 class = "hello">
-                  <%if booking.pending?%>
-                  <div class ="checkthispend">
-                    <%=link_to "Pending Session with #{booking.icon.name} #{booking.start_time.strftime("at %I:%M%p")}", booking%></h3>
-
-                  </div>
-                  <% elsif booking.status = 1%>
-                      <div class ="checkthisquick">
-                      <%=link_to "Accepted Session with #{booking.icon.name} #{booking.start_time.strftime("at %I:%M%p")}", booking%></h3>
+                  <div class = "card">
+                    <h3 class = "hello">
+                    <div class ="checkthispend">
+                      <%= link_to "#{booking.status} Session with #{booking.icon.name} #{booking.start_time.strftime("at %I:%M%p")}", booking%>
+                      </h3>
                     </div>
-                  <% elsif booking.status = 2%>
-                    <div class ="checkthidec">
-                    <%=link_to "Declined Session with #{booking.icon.name} #{booking.start_time.strftime("at %I:%M%p")}", booking%></h3>
-                  <% end %>
                   </div>
-                  <%end%>
+                <%end%>
               </td>
             <%end%>
           <tr>
@@ -198,23 +190,21 @@
                 <%=day%>
                 <%@bookings.select{ |b| b.start_day&.to_date == day }.sort_by(&:start_time).each do |booking| %>
                   <!--<img class ="photoMini" src = "<%= cl_image_path(booking.icon.photo.key) %>">-->
-                  <div class = "card"><h3 class = "hello">
-                  <%if booking.pending?%>
-                  <div class ="checkthispend">
-                    <%=link_to "Pending Session with #{booking.user.email} #{booking.start_time.strftime("at %I:%M%p")}", booking%></h3>
-                      <div class = "button-cancel">
-                        <%= link_to 'Delete', booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel this booking?"}, class: 'cancel-button' %>
-                        <%= link_to 'Accept', booking_path(booking, booking: {status: "accepted"}), method: :patch, data: { confirm: "Are you sure you want to accept this booking?"}, class: 'cancel-accept' %>
-                      </div>
-                  </div>
-                  <% elsif booking.status = 1%>
-                      <div class ="checkthisquick">
-                      <%=link_to "Accepted Session with #{booking.user.email} #{booking.start_time.strftime("at %I:%M%p")}", booking%></h3>
+                  <div class = "card">
+                    <h3 class = "hello">
+
+                    <div class ="checkthispend <%=booking.status%>">
+                      <%=link_to "#{booking.status} Session with #{booking.user.email} #{booking.start_time.strftime("at %I:%M%p")}", booking%></h3>
+                        <div class = "button-cancel">
+                          <% if !booking.accepted? %>
+                            <%= link_to 'Accept', booking_path(booking, booking: {status: "accepted"}), method: :patch, data: { confirm: "Are you sure you want to accept this booking?"}, class: 'cancel-accept' %>
+                          <% end %>
+                          <% if !booking.declined? %>
+                            <%= link_to 'Decline', booking_path(booking, booking: {status: "declined"}), method: :patch, data: { confirm: "Are you sure you want to accept this booking?"}, class: 'cancel-accept' %>
+                          <% end %>
+                          <%= link_to 'Delete', booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel this booking?"}, class: 'cancel-button' %>
+                        </div>
                     </div>
-                  <% elsif booking.status = 2%>
-                    <div class ="checkthidec">
-                    <%=link_to "Declined Session with #{booking.user.email} #{booking.start_time.strftime("at %I:%M%p")}", booking%></h3>
-                  <% end %>
                   </div>
                   <%end%>
               </td>

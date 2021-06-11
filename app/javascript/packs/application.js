@@ -57,11 +57,5 @@ document.addEventListener('turbolinks:load', () => {
     initIconCalendarToggle();
   }
   // initMapbox2();
-
-  if (document.querySelector(".calendar-wrap")) {
-    initToggle();
-    initToggle2();
-    initColorToggle();
-  }
 });
 

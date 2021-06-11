@@ -1,11 +1,11 @@
-.checkthisquick{
+.checkthispend.accepted{
     color: green !important;
     a {
         color: green;
     }
 }
 
-.checkthisdec{
+.checkthispend.declined{
     color: red !important;
     a {
         color: red;
@@ -13,8 +13,16 @@
 }
 
 .checkthispend{
-    color: gray !important;
+    color: gray;
     a {
         color: gray;
     }
+}
+
+.card-status.accepted{
+    background-color: green;
+}
+
+.card-status.declined{
+    background-color: red;
 }
