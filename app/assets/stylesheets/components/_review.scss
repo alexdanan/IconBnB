@@ -1,0 +1,43 @@
+.new-review-form {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 8rem;
+  background-color: #2d2d2d;
+  padding: 16px;
+  border-radius: 0.25rem;
+}
+
+#review_content {
+  border: #272c33;
+  border-radius: .25rem;
+  color: black;
+  width: calc(100% - 1.5rem);
+  padding: .375rem .75rem;
+  height: 75px;
+  margin-bottom: 0.25rem;
+}
+
+.public-review {
+  width: 50%;
+  margin-top: 8rem;
+  background-color: #191d21;
+  padding: 16px;
+  border: solid 1px #30343a;
+  border-radius: 0.25rem;
+  ul {
+    padding-left: 0;
+  }
+}
+
+.public-review .link a {
+  color: white;
+}
+
+.public-review-interior {
+  background-color: #353a3f;
+  height: 75px;
+  padding: 16px;
+  border: solid 1px #30343a;
+  border-radius: 0.25rem;
+  margin-top: 8px;
+}

@@ -4,7 +4,7 @@
   <div class="show-hero-contaienr">
     <!-- [+] HERO IMAGE -->
     <div class="show-hero">
-      <div class="show-hero-img" style="background:url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn4.pitchfork.com%2Flongform%2F1005%2FBobDylan.jpg&f=1&nofb=1');">
+      <div class="show-hero-img" style="background:url('<%= cl_image_path @icon.photo.key, width: 983, height: 420, crop: :thumb, gravity: :face%>')">
         <span class="show-cat">Show in <%= @icon.category %> by:</span>
         <h1><%= @icon.name %></h1>
       </div>
@@ -26,7 +26,7 @@
         <li>
           <span class="title"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" enable-background="new 0 0 512 512" height="21" viewBox="0 0 512 512" width="21"><g><path d="m437.02 74.98c-48.352-48.352-112.64-74.98-181.02-74.98s-132.668 26.628-181.02 74.98-74.98 112.64-74.98 181.02 26.629 132.667 74.98 181.02 112.64 74.98 181.02 74.98 132.668-26.628 181.02-74.98 74.98-112.64 74.98-181.02-26.629-132.667-74.98-181.02zm-181.02 165.02c39.701 0 72 32.299 72 72 0 32.877-22.157 60.659-52.318 69.243-2.167.617-3.682 2.566-3.682 4.819v13.486c0 8.616-6.621 16.029-15.227 16.434-9.189.432-16.773-6.889-16.773-15.982v-13.941c0-2.247-1.506-4.197-3.667-4.812-30.032-8.54-52.132-36.113-52.332-68.8-.053-8.725 6.807-16.19 15.529-16.44 9.051-.26 16.47 7 16.47 15.993 0 23.002 19.517 41.532 42.859 39.9 19.704-1.377 35.665-17.339 37.041-37.043 1.63-23.343-16.899-42.857-39.9-42.857-39.701 0-72-32.299-72-72 0-32.877 22.157-60.659 52.318-69.243 2.167-.617 3.682-2.566 3.682-4.819v-13.486c0-8.616 6.621-16.029 15.227-16.434 9.189-.432 16.773 6.889 16.773 15.982v13.941c0 2.247 1.506 4.197 3.667 4.812 30.032 8.54 52.132 36.113 52.332 68.8.053 8.725-6.807 16.19-15.529 16.44-9.051.26-16.47-7-16.47-15.993 0-23.002-19.517-41.532-42.859-39.9-19.704 1.377-35.665 17.339-37.041 37.043-1.63 23.343 16.899 42.857 39.9 42.857z"/></g></svg>
           </span>
-          <span class="the-price"><%= @icon.price %> $</span>
+          <span class="the-price">$<%= @icon.price %></span>
         </li>
 <li>
   <h2> <%= link_to "Book the icon", new_icon_booking_path(@icon) %> </h2>
@@ -39,6 +39,12 @@
   </div>
   <!-- [-] SHOW HERO -->
 
+  <div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
   <!-- [+] IN SIMILAR CATEGORY -->
   <section class="similar-show">
     <div class="similar-show-title">
@@ -50,8 +56,35 @@
 
         </li>
       </ul>
+      <div class="similar-show-title">
+        <h2>User reviews</h2>
+        <h2> <i class="fas fa-star"></i>  <%= @icon.average_rating %> </h2>
+      </div>
+  <!-- [-] END IN SIMILAR CATEGORY -->
+
+  <!-- [+] IN REVIEW CATEGORY -->
+      <div class="public-review">
+        <% @icon.reviews.each do |review| %>
+          <ul>
+            <li>
+              <% review.rating.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>  
+            </li>
+            <div class="public-review-interior">
+              <li>
+                <%= review.content %>
+              </li>
+            </div>
+          </ul>
+          <div class="link">
+            <%= link_to 'Delete', review_path(review), method: :delete  %>
+          </div>
+          <hr>
+        <% end -%>
+      </div>
     </div>
   </section>
-  <!-- [-] END IN SIMILAR CATEGORY -->
 </section>
+<!-- [-] END IN REVIEW CATEGORY -->
 <!-- [-] SINGLE SHOW -->

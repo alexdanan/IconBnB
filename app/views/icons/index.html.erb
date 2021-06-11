@@ -67,16 +67,12 @@
   <!--
   <div class="left-side-bar">
     <ul class="category-icons">
-      <li>All classes</li>
-      <li>Arts & Entertainment</li>
-      <li>Food</li>
-      <li>Music</li>
-      <li>Business</li>
-      <li>Sports & Gaming</li>
-      <li>Writing</li>
-      <li>Science & Tech</li>
-      <li>Home & Lifestyle</li>
-      <li>Community & Government</li>
+
+      <li><%= link_to "All icons", icons_path %></li>
+      <% @categories.each do |cat| %>
+
+      <li class="category"><%= link_to "#{cat}", "/icons?query=#{cat}"  %></li>
+        <% end %>
     </ul>
   </div>
 -->
@@ -86,7 +82,7 @@
 
       <% @icons.each do |icon| %>
       <% if icon.photo.attached? %>
-       <li style="background:url(<%=cl_image_path(icon.photo.key) %>)">
+       <li style="background:url(<%= cl_image_path(icon.photo.key) %>)">
           <% else %>
   <img src="https://phantom-marca.unidadeditorial.es/6325b621b1ec481729f0865211d0ed3f/resize/1320/f/jpg/assets/multimedia/imagenes/2020/11/25/16062940399517.jpg" alt="">
   <% end %>
@@ -100,10 +96,7 @@
         </div>
       </li>
       <% end %>
-      <!-- [-] SINGLE ICON ITEM -->
-      <!-- [+] SINGLE ICON ITEM -->
 
-      <!-- [-] SINGLE ICON ITEM -->
     </ul>
   </div>
 
@@ -119,4 +112,10 @@
 <!-- [-] ICONS -->
 
 </section>
+
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 <!-- ICONS INDEX HTML [-] -->
