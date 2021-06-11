@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:show, :edit, :update, :destroy, :confirm] do
     resources :reviews, only: [:new, :create]
   end
+  
+  resources :reviews, only: [:destroy]
 # TODO: add routes for day_avabs
 end

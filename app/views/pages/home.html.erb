@@ -5,38 +5,28 @@
     <span class="cta-title">Create free account</span>
     <h1>BECOME THE SMARTEST PERSON IN THE ROOM</h1>
     <p>The best way to become master in your field.</p>
-    <form class="" action="/icons" method="get">
-      <input type="text" name="location" placeholder="Search by Location" id="icon_location">
-      <button type="submit" name="button">Search</button>
-    </form>
-    <span class="terms">By sharing your email, you agree to our Terms of Service and Privacy Policy.</span>
+
+    <%=form_tag icons_path, method: :get do  %>
+    <%= text_field_tag :location,
+    params[:location],
+    placeholder: "Search by Location", id: "icon_location"
+  %>
+  <button type="submit">Search</button>
+  <% end %>
+
+
   </div>
   <!-- [-] Call 2 Action -->
   <div class="home-slider">
     <div class="inner">
       <ul> <!-- THE SLIDER -->
-        <!-- [+] ITEM -->
 
-
-<!--          <% @icons.each do |icon| %>
-      <% if icon.photo.attached? %>
-       <li style="background:url(<%=cl_image_path(icon.photo.key) %>)">
-          <% else %>
-  <img src="https://phantom-marca.unidadeditorial.es/6325b621b1ec481729f0865211d0ed3f/resize/1320/f/jpg/assets/multimedia/imagenes/2020/11/25/16062940399517.jpg" alt="">
-  <% end %>
-      <li style="background:url('https://www.masterclass.com/course-images/attachments/PM3N5CPL1AhDizCfJSFhsZUi?width=300&height=533&fit=cover&dpr=2');">
-       <div class="hs-inner">
-          <div class="title">
-            <p class = "shadow"><strong><%= icon.name %></strong></p>
-            <p class = "shadow"><%= icon.description %></p>
-          </div>
-          <button class="button" type="button" name="button"><%= link_to "Book", icon_path(icon) %></button>
-        </div>
-      </li>
-      <% end %> -->
-
-
+      <% if @barack.photo.attached? %>
         <li class="hs-item" style="background:url(<%=cl_image_path(@barack.photo.key) %>)">
+           <% else %>
+           <li class="hs-item" style="background:url("https://phantom-marca.unidadeditorial.es/6325b621b1ec481729f0865211d0ed3f/resize/1320/f/jpg/assets/multimedia/imagenes/2020/11/25/16062940399517.jpg" alt="")>
+         <% end %>
+
           <div class="hs-inner">
             <div class="title">
               <p class= "shadow"><strong><%= @barack.name %></strong></p>
@@ -47,7 +37,13 @@
         </li>
 
 
-        <<li class="hs-item" style="background:url(<%=cl_image_path(@socrates.photo.key) %>)">
+<% if @socrates.photo.attached? %>
+        <li class="hs-item" style="background:url(<%=cl_image_path(@socrates.photo.key) %>)">
+<% else %>
+           <li class="hs-item" style="background:url("https://phantom-marca.unidadeditorial.es/6325b621b1ec481729f0865211d0ed3f/resize/1320/f/jpg/assets/multimedia/imagenes/2020/11/25/16062940399517.jpg" alt="")>
+         <% end %>
+
+
           <div class="hs-inner">
             <div class="title">
               <p class= "shadow"><strong><%= @socrates.name %></strong></p>
@@ -57,8 +53,11 @@
           </div>
         </li>
 
-
+<% if @rihanna.photo.attached? %>
         <li class="hs-item" style="background:url(<%=cl_image_path(@rihanna.photo.key) %>)">
+          <% else %>
+           <li class="hs-item" style="background:url("https://phantom-marca.unidadeditorial.es/6325b621b1ec481729f0865211d0ed3f/resize/1320/f/jpg/assets/multimedia/imagenes/2020/11/25/16062940399517.jpg" alt="")>
+         <% end %>
           <div class="hs-inner">
             <div class="title">
               <p class= "shadow"><strong><%= @rihanna.name %></strong></p>
@@ -106,7 +105,31 @@
       <!-- [START] CATEGORY SLIDER [+] -->
           <ul class="category-slider">
             <!-- [+] ITEM -->
-            <li class="item">
+            <li class="item" style="background:url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3BvcnRzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60');">
+              <div class="inner">
+                <span class="details">8 Mentors</span>
+                <h3>Cook The Pleasure</h3>
+              </div>
+            </li>
+            <!-- [-] ITEM -->
+            <!-- [+] ITEM -->
+            <li class="item" style="background:url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3BvcnRzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60');">
+              <div class="inner">
+                <span class="details">8 Mentors</span>
+                <h3>Cook The Pleasure</h3>
+              </div>
+            </li>
+            <!-- [-] ITEM -->
+            <!-- [+] ITEM -->
+            <li class="item" style="background:url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3BvcnRzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60');">
+              <div class="inner">
+                <span class="details">8 Mentors</span>
+                <h3>Cook The Pleasure</h3>
+              </div>
+            </li>
+            <!-- [-] ITEM -->
+            <!-- [+] ITEM -->
+            <li class="item" style="background:url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3BvcnRzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60');">
               <div class="inner">
                 <span class="details">8 Mentors</span>
                 <h3>Cook The Pleasure</h3>
@@ -121,10 +144,23 @@
 <!-- [END] CATEGORY [-] -->
 </section>
 <!--[END] WRAP [-]-->
-<!-- [START] FOOTER -->
-<footer class="main-footer">
-<div class="iner">
+<!--[START][MAP][+] -->
+<section class="map-home">
+<div class="inner">
+<div class="map-icons-container">
+<ul>
+  <li>
+    <div class="inner-ico">
+      <div class="img">
 
+      </div>
+      <div class="description">
+
+      </div>
+    </div>
+  </li>
+</ul>
 </div>
-</footer>
-<!-- [END] FOOTER -->
+</div>
+</section>
+<!--[END][MAP][-] -->

@@ -27,15 +27,26 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+
+
+import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
+
 import { initFlickity } from '../plugins/init_flickity';
 import { initIconToggle, initUserCalendarToggle, initIconBookingToggle, initColorToggle2, initIconCalendarToggle } from '../components/init_toggle';
 import { initUserListToggle } from '../components/init_toggle';
 import { initColorToggle } from '../components/init_toggle';
+import { initStarRating } from '../plugins/init_star_rating';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initFlickity();
+  initMapbox();
+  initStarRating();
+  initAutocomplete();
+
   if (document.querySelector(".wrapthat")) {
     initUserCalendarToggle();
     initUserListToggle();
@@ -45,4 +56,12 @@ document.addEventListener('turbolinks:load', () => {
     initColorToggle2();
     initIconCalendarToggle();
   }
+  // initMapbox2();
+
+  if (document.querySelector(".calendar-wrap")) {
+    initToggle();
+    initToggle2();
+    initColorToggle();
+  }
 });
+

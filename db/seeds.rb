@@ -11,6 +11,8 @@ puts "Destroying all users"
 User.destroy_all
 puts "Destroying all icons"
 Icon.destroy_all
+puts "Destroying all reviews"
+Review.destroy_all
 
 require "open-uri"
 
@@ -74,8 +76,76 @@ icons = [
     name: "Walter White", category: "Business",
     description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
     price: 10, location: "Wisconsin"
+  },
+    {
+    image_url: "https://kawa-news.com/wp-content/uploads/2021/04/elonmusk.jpg",
+    name: "Elon Musk", category: "Business",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "San Francisco"
+  },
+  {
+    image_url: "https://media-exp1.licdn.com/dms/image/C5603AQFun1MtI88Vyw/profile-displayphoto-shrink_800_800/0/1603138920608?e=1628726400&v=beta&t=_8wYjTxKmD5FOUTFXRYVGAY_xM_tpLvyitEPxLQI6FE",
+    name: "Nicolas Proto", category: "Code",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Barcelona"
+  },
+   {
+    image_url: "https://www.sustainability-times.com/wp-content/uploads/2019/03/Morgan_Freeman-Acoso_sexual-Harvey_Weinstein-Hollywood-Cine_309732160_79173876_1024x576.jpg",
+    name: "Morgan Freeman", category: "Cinema",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "New York"
+  },
+  {
+  image_url: "https://mir-s3-cdn-cf.behance.net/project_modules/disp/eba85d54261541.5609376472af6.jpg",
+    name: "James Bond", category: "Cinema",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "London"
+  },
+  {
+  image_url: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg",
+    name: "Albert Einstein", category: "Science",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Germany"
+  },
+    {
+  image_url: "https://i.pinimg.com/originals/e1/f6/40/e1f640c675ec89d64c971a00eca7d58f.jpg",
+    name: "Snoopy", category: "Music",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Los Angeles"
+  },
+  {
+  image_url: "https://time.com/wp-content/uploads/2016/09/donald-trump-nigel-parry.jpeg?w=760",
+    name: "Donald Trump", category: "Politics",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Washington"
+  },
+  {
+  image_url: "https://fotos00.estadiodeportivo.com/2021/06/10/690x278/macron-contento.jpg",
+    name: "Emmanuel Macron", category: "Politics",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Paris"
+  },
+  {
+  image_url: "https://los40es00.epimg.net/los40/imagenes/2016/03/02/musica/1456925626_462195_1456925734_noticia_normal.jpg",
+    name: "Justin Bieber", category: "Music",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Los Angeles"
+  },
+  {
+  image_url: "https://media.vanityfair.com/photos/5cdacd630c67926f7fea3f72/1:1/w_1669,h_1669,c_limit/MCDTROY_EC007.jpg",
+    name: "Achilles", category: "Sports",
+    description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
+    price: 10, location: "Turkey"
   }
+]
 
+reviews = [
+  { rating: 5, content: "This is possibly the best thing that has happened to me in my entire life, I am overcome with joy." },
+  { rating: 4, content: "Once in a lifetime experience, would absolutely recommend to anyone who can afford the coststs of a celeberity for a one on one tal, so basically nobody." },
+  { rating: 2, content: "I got called an idiot sandwich. I am forever scarred." },
+  { rating: 5, content: "My only regret is that I can only give 5 stars instead of 10." },
+  { rating: 1, content: "They failed the vibe check." },
+  { rating: 4, content: "My parents gifted me a session with them for my birthday and I couldn't be happier!" }
 ]
 
 vlad = User.create(email: "adrewkin@outlook.com", password: "password")
@@ -122,4 +192,13 @@ icons.each do |icon|
         status: (0..1).to_a.sample
         )
 end
-puts "This many user#{User.count}'s created"
+
+Icon.all.each do |icon|
+  reviews.each do |review|
+    Review.create!(rating: review[:rating], content: review[:content], booking: Booking.all.sample)
+  end
+end
+puts "Created #{User.count} users"
+puts "Created #{Icon.count} icons"
+puts "Created #{Booking.count} bookings"
+puts "Created #{Review.count} reviews"

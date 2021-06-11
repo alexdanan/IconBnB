@@ -1,0 +1,38 @@
+.mapboxgl-popup {
+  width: 90px;
+
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  padding: 0 !important;
+  height: 90px;
+}
+
+.map-window {
+  background-size: cover;
+  height: 100%;
+  padding: 16px;
+  background-position: center;
+  font-size: 8px;
+
+  h2 {
+    margin: 0;
+    justify-content: end;
+  }
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  display: none;
+}
+
+.mapboxgl-popup-close-button:focus {
+  outline: none;
+
+}
+
+.mapboxgl-marker-anchor-center {
+  // display: none;
+
+}

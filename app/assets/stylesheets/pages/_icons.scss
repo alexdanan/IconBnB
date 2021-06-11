@@ -9,6 +9,12 @@
     align-content: flex-end;
     border: 1px solid #31333b;
 }
+.icons-hero {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - 160px);
+}
 .sup-title {
     color: #fff;
     font-weight: bold;
@@ -24,8 +30,8 @@
     opacity: .8;
 }
 .index-icons-wrap {
-  padding-top: 80px;
-    max-width: 1328px;
+    padding-top: 80px;
+    width: calc(100% - 80px);
     right: 0px;
     left: 0px;
     margin: auto;
@@ -33,7 +39,7 @@
 .list-iner {
     display: flex;
 }
- 
+
 ul.icons-lists ul {
     margin: 0px;
     padding: 0px;
@@ -43,7 +49,7 @@ ul.icons-lists ul {
     width: calc(100% - (125% / 1.618));
 }
 .right-side-bar {
-    width: calc(125% / 1.618);
+    width: calc(100% / 1.618);
 }
 
 
@@ -100,4 +106,20 @@ ul.category-icons li:hover{
 ul.category-icons {
     position: sticky;
     top: 70px;
+}
+.left-side-map {
+    width: calc(100% - (100% / 1.618));
+    border-radius: 12px;
+    border: solid 1px #30343a;
+    overflow: hidden;
+}
+.left-side-map {
+    width: calc(100% - (100% / 1.618));
+    border-radius: 12px;
+    border: solid 1px #30343a;
+    overflow: hidden;
+    position: sticky;
+    top: 73px;
+    
+    height: calc(100vh - 80px);
 }
