@@ -2,7 +2,7 @@ const userCalendar = document.querySelector(".wrapper")
 const btn = document.querySelector(".link");
 const userList = document.querySelector(".wrapthat")
 const btn2 = document.querySelector(".link2");
-const colorChange = document.querySelector(".card-status");
+const colorChange = document.querySelectorAll(".card-status");
 const colorChange2 = document.querySelector(".card-status2");
 const btn3 = document.querySelector(".link4");
 const iconToggles = document.querySelector(".icon-wrap");
@@ -53,6 +53,7 @@ const btn7 = document.querySelector(".link7");
 // }
 
 const initColorToggle = () => {
+	console.log(colorChange.innerHTML)
 	if (colorChange.innerHTML == "Booking status: Accepted") {
 		colorChange.style.backgroundColor = "rgb(0, 155, 0)"
 	} else if (colorChange.innerHTML == "Booking status: Declined") {
