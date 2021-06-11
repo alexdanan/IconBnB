@@ -28,6 +28,7 @@ class IconsController < ApplicationController
 
   def show
     @icon = Icon.find(params[:id])
+    @booking = Booking.new
 
     @markers =
       [{
@@ -37,6 +38,7 @@ class IconsController < ApplicationController
       }]
 
     authorize @icon
+    authorize @booking
   end
 
   def new
