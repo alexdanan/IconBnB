@@ -22,6 +22,7 @@ class Icon < ApplicationRecord
     ratings = self.reviews.map do |review|
       review.rating
     end
-    ratings.inject { |sum, el| sum + el }.to_f / ratings.size
+    verdict = ratings.inject { |sum, el| sum + el }.to_f / ratings.size
+    verdict.round(2)
   end
 end
