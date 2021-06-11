@@ -1,7 +1,7 @@
 class Icon < ApplicationRecord
   CATEGORIES = ["Music", "Sports", "Business", "Food", "Politics", "Science", "Design", "Writing", "Cinema", "Code"]
   has_many :bookings, dependent: :destroy
-  has_many :reviews, through: :bookings
+  has_many :reviews, through: :bookings, dependent: :destroy
   belongs_to :user
   has_one_attached :photo
   validates :name, :price, :location, :category, :description, presence: true
