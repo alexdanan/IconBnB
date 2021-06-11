@@ -11,6 +11,8 @@ puts "Destroying all users"
 User.destroy_all
 puts "Destroying all icons"
 Icon.destroy_all
+puts "Destroying all reviews"
+Review.destroy_all
 
 require "open-uri"
 
@@ -137,6 +139,15 @@ icons = [
   }
 ]
 
+reviews = [
+  { rating: 5, content: "This is possibly the best thing that has happened to me in my entire life, I am overcome with joy." },
+  { rating: 4, content: "Once in a lifetime experience, would absolutely recommend to anyone who can afford the coststs of a celeberity for a one on one tal, so basically nobody." },
+  { rating: 2, content: "I got called an idiot sandwich. I am forever scarred." },
+  { rating: 5, content: "My only regret is that I can only give 5 stars instead of 10." },
+  { rating: 1, content: "They failed the vibe check." },
+  { rating: 4, content: "My parents gifted me a session with them for my birthday and I couldn't be happier!" }
+]
+
 vlad = User.create(email: "adrewkin@outlook.com", password: "password")
 carlos = User.create(email: "lacuevafortitcarlos@gmail.com", password: "password")
 alexia = User.create(email: "sassia93@hotmail.com", password: "password")
@@ -181,6 +192,13 @@ icons.each do |icon|
         status: (0..1).to_a.sample
         )
 end
+
+Icon.all.each do |icon|
+  reviews.each do |review|
+    Review.create!(rating: review[:rating], content: review[:content], booking: Booking.all.sample)
+  end
+end
 puts "Created #{User.count} users"
 puts "Created #{Icon.count} icons"
 puts "Created #{Booking.count} bookings"
+puts "Created #{Review.count} reviews"
