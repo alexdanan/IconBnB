@@ -126,7 +126,7 @@ icons = [
     price: 10, location: "Paris"
   },
   {
-  image_url: "https://fotos00.estadiodeportivo.com/2021/06/10/690x278/macron-contento.jpg",
+  image_url: "https://los40es00.epimg.net/los40/imagenes/2016/03/02/musica/1456925626_462195_1456925734_noticia_normal.jpg",
     name: "Justin Bieber", category: "Music",
     description: "Super fun guy to meet, will teach you many differetn things Super fun guy to meet, will teach you many differetn things",
     price: 10, location: "Los Angeles"
