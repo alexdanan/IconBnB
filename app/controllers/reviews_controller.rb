@@ -23,6 +23,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     authorize @review
     @review.destroy
+    redirect_to icon_path(@review.booking.icon)
   end
 
   private

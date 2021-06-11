@@ -47,9 +47,12 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   // initMapbox2();
   initAutocomplete();
-  initToggle();
-  initToggle2();
-  initColorToggle();
+  if (document.querySelector(".calendar-wrap")) {
+    initToggle();
+    initToggle2();
+    initColorToggle();
+  }
+
   initStarRating();
 });
 

@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2021_06_10_091026) do
     t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.date "start_day"
     t.index ["icon_id"], name: "index_bookings_on_icon_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

@@ -10,6 +10,6 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def destroy?
-    user.admin || record.user == user
+    record.booking.user == user
   end
 end
