@@ -25,11 +25,11 @@ class IconsController < ApplicationController
     @icon = Icon.find(params[:id])
 
     @markers =
-      {
+      [{
         lat: @icon.latitude,
         lng: @icon.longitude,
         info_window: render_to_string(partial: "info_window", locals: { icon: @icon })
-      }
+      }]
 
     authorize @icon
   end
