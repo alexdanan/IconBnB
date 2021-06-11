@@ -10,6 +10,11 @@ class IconsController < ApplicationController
     else
       @icons = Icon.all
     end
+
+    if params[:location].present?
+      @icons = @icons.near(params[:location], 20)
+    end
+
     @categories = Icon.distinct.pluck(:category)
 
     @markers = @icons.geocoded.map do |icon|
