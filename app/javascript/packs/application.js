@@ -27,7 +27,7 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
+import {initFlatpickr} from "../plugins/init_flatpickr";
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
@@ -46,6 +46,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initStarRating();
   initAutocomplete();
+  initFlatpickr();
 
   if (document.querySelector(".wrapthat")) {
     initUserCalendarToggle();
@@ -57,11 +58,5 @@ document.addEventListener('turbolinks:load', () => {
     initIconCalendarToggle();
   }
   // initMapbox2();
-
-  if (document.querySelector(".calendar-wrap")) {
-    initToggle();
-    initToggle2();
-    initColorToggle();
-  }
 });
 
